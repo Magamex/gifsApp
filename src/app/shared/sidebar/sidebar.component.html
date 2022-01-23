@@ -2,6 +2,6 @@
   <div class="panel has-background-white">
     <p class="panel-heading">GifsApp</p>
 
-    <a class="panel-block">bulma</a>
+    <a *ngFor="let item of historial" class="panel-block">{{item | titlecase}}</a>
   </div>
 </div>
