@@ -1,1 +1,12 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse numquam beatae, rerum consectetur officiis quisquam. Ullam, nostrum. Rerum optio ab porro voluptates, rem dignissimos fuga. Ut aspernatur eius accusamus dolorum.
+<!-- <ul>
+  <li *ngFor="let gif of resultados">
+    <img src="{{gif.url}}" alt="{{gif.title}}">
+  </li>
+</ul> -->
+<div class="container">
+  <div class="columns is-gapless is-multiline is-mobile">
+    <div class="column is-one-quarter" *ngFor="let gif of resultados">
+        <img src="{{gif.images.downsized_medium.url}}">
+    </div>
+  </div>
+</div>

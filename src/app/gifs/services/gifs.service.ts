@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
 
-  constructor() { }
-
+  constructor(private http: HttpClient) { }
+// https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=mortalkombat&limit=10
+  private apiKey: string = 'rwja0IV3q4g2LjbR422esKEen8gt76Kb';
   private _historial: string[] = [];
+
+  //Cambiar any por su tipo
+  public resultados: any[] = [];
 
   // Romper la referencia con el operador spread (...)
   get historial() {
@@ -24,6 +29,10 @@ export class GifsService {
       this._historial = this._historial.slice(0, 10);
     }
 
-    console.log(this._historial)
-  }
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=${query}&limit=10`)
+      .subscribe((resp:any) =>{
+        console.log(resp.data);
+        this.resultados = resp.data;
+      })
+    }
 }
