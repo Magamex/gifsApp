@@ -7,7 +7,12 @@ import { Gif, SearchGifsResponse } from '../interfaces/gifs.interface';
 })
 export class GifsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this._historial = JSON.parse(localStorage.getItem('historial')!) || [];
+    // if(localStorage.getItem('historial')){
+    //   this._historial = JSON.parse(localStorage.getItem('historial')!);
+    // }
+  }
 // https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=mortalkombat&limit=10
   private apiKey: string = 'rwja0IV3q4g2LjbR422esKEen8gt76Kb';
   private _historial: string[] = [];
@@ -28,6 +33,8 @@ export class GifsService {
     if(!this._historial.includes(query)){
       this._historial.unshift(query);
       this._historial = this._historial.slice(0, 10);
+
+      localStorage.setItem('historial', JSON.stringify(this._historial));
     }
 
     this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=${query}&limit=10`)
