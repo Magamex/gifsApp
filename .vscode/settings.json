@@ -1,1 +1,18 @@
-{}
+{
+    "workbench.colorCustomizations": {
+      "editor.selectionHighlightBackground": "#135564",
+      "editor.findMatchHighlightBackground": "#ff7b00a1",
+      "editor.findMatchBorder": "#ffff00",
+      "editor.findMatchHighlightBorder": "#ff0000",
+      "editor.selectionHighlightBorder": "#ffffff",
+      "editor.lineHighlightBorder": "#272727",
+      "editor.selectionBackground": "#135564",
+      "editor.wordHighlightBackground": "#771835",
+      "editorCursor.foreground": "#00ff00",
+      "editor.lineHighlightBackground": "#181818",
+      "editor.findMatchBackground": "#00cc44a8",
+      "statusBar.debuggingBackground": "#410d18",
+      "statusBar.debuggingForeground": "#dddddd",
+      "numberedBookmarks.lineBackground": "#007700"
+    }
+}

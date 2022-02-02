@@ -1,12 +1,18 @@
-<!-- <ul>
-  <li *ngFor="let gif of resultados">
-    <img src="{{gif.url}}" alt="{{gif.title}}">
-  </li>
-</ul> -->
 <div class="container">
-  <div class="columns is-gapless is-multiline is-mobile">
-    <div class="column is-one-quarter" *ngFor="let gif of resultados">
-        <img src="{{gif.images.downsized_medium.url}}">
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-quarter-desktop is-6-tablet is-12-mobile" *ngFor="let gif of resultados">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{{gif.images.downsized_medium.url}}">
+          </figure>
+          <div class="card-content is-overlay is-clipped">
+            <span class="tag is-info">
+              {{gif.title}}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
