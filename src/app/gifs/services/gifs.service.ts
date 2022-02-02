@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Gif, SearchGifsResponse } from '../interfaces/gifs.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class GifsService {
   private _historial: string[] = [];
 
   //Cambiar any por su tipo
-  public resultados: any[] = [];
+  public resultados: Gif[] = [];
 
   // Romper la referencia con el operador spread (...)
   get historial() {
@@ -29,8 +30,8 @@ export class GifsService {
       this._historial = this._historial.slice(0, 10);
     }
 
-    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=${query}&limit=10`)
-      .subscribe((resp:any) =>{
+    this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=rwja0IV3q4g2LjbR422esKEen8gt76Kb&q=${query}&limit=10`)
+      .subscribe((resp) =>{
         console.log(resp.data);
         this.resultados = resp.data;
       })
