@@ -1,3 +1,8 @@
+
+Demo: https://buscador-de-gif-seven.vercel.app/
+
+![Record_select-area_20220202235931](https://user-images.githubusercontent.com/11765730/152274305-a5b65de3-76c1-416b-b18e-5adfda0047e2.gif)
+
 # GifsApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
