@@ -2,6 +2,16 @@
   <div class="panel has-background-white">
     <p class="panel-heading">Buscador de Gif</p>
 
-    <a *ngFor="let item of historial" class="panel-block">{{item | titlecase}}</a>
+    <a *ngFor="let item of historial"
+       class="panel-block"
+       (click)="buscar(item)">
+       {{item | titlecase}}
+    </a>
+    <div class="panel-block">
+      <a href="https://github.com/Magamex" target="_blank" class="button is-link is-outlined is-fullwidth">
+        By magamex
+      </a>
+    </div>
   </div>
+
 </div>
